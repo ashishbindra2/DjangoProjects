@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing</title>
+    <link rel="stylesheet" href="{%static 'css/style.css' %}">
+  </head>
+  <body>
+Hi {{name}}
+{% if emp %}
+{% for e in emp%}
+{{e.name}}
+{{e.eno}}
+{%endfor%}
+{%else%}
+ No record found
+{%endif%}
+<hr>
+<img src="{%static "image/pexels.jpeg"%}" alt="image">
+<img src="{%static "image/pexels.jpeg"%}" alt="image">
+<img src="{%static "image/pexels.jpeg"%}" alt="image">
+<img src="{%static "image/pexels.jpeg"%}" alt="image">
+<img src="{%static "image/pexels.jpeg"%}" alt="image">
+  </body>
+</html>

@@ -1,0 +1,11 @@
+body{
+  margin:  0 auto;
+  padding: 0;
+  text-align: center;
+
+}
+img{
+    border: 5px groove green;
+    height: 250px;
+    weight:24%;
+}
