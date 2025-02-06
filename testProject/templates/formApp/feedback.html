@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container" align='center'>
+    <h1>Student Feedback Form</h1>
+    <hr>
+    <form class="" action="index.html" method="post">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value="Submit Feedback">
+    </form>
+</div>
+</body>
+</html>

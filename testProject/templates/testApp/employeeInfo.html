@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Info</title>
+    <style>
+        table{
+        width:100%;
+        padding: 20px;
+        }
+        tr{
+         border: 1px solid #ccc!important;
+        }
+    </style>
+</head>
+<body>
+<h1 style="    text-align:center;">Employee Data</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Employee Name</th>
+        <th>Employee Email</th>
+        <th>Employee Salary</th>
+        <th>City</th>
+    </tr>
+    </thead>
+    <tbody>
+    {%for emp in empList %}
+    <tr>
+        <td>{{emp.ename}}</td>
+        <td>{{emp.email}}</td>
+        <td>{{emp.esal}}</td>
+        <td>{{emp.ecity}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
