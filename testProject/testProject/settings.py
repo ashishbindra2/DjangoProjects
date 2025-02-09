@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "testApp",
     "greetApp",
-    "formApp"
+    "formApp",
+    'modelFormApp',
+    'sessionApp'
 ]
 
 MIDDLEWARE = [

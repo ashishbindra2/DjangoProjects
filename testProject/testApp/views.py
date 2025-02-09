@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import EmployeeModel
 from faker import Faker
+from .forms import SignUpForm
 
 
 # Create your views here.
@@ -29,7 +30,7 @@ def add_employee(request):
         salary = float(fack.pricetag().replace(',', '')[1:])
         city = fack.city()
         email = fack.email()
-        EmployeeModel.objects.get_or_create(ename=name,esal=salary,ecity=city,email=email)
+        EmployeeModel.objects.get_or_create(ename=name, esal=salary, ecity=city, email=email)
     return HttpResponse("yo")
 
 
@@ -43,4 +44,22 @@ def get_employee(request):
     employess = EmployeeModel.objects.all().get(id=5)
 
     print(employess)
-    return render(request,template_name='testApp/employeeInfo.html', context={"empList":employess})
+    return render(request, template_name='testApp/employeeInfo.html', context={"empList": employess})
+
+
+def signup_view(request):
+    form = SignUpForm()
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            print('Basic Validation Completed and Printing Data')
+            print('Name:', form.cleaned_data['username'])
+            print('Password:', form.cleaned_data['password'])
+            print('Email:', form.cleaned_data['email'])
+            return redirect('login')  # You can change this to wherever you want to redirect the user
+
+    return render(request, 'testApp/signup.html', {"form": form})
+
+
+def login_view(request):
+    return render(request, 'testApp/login.html')
