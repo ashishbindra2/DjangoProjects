@@ -5,6 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-java Hello
+<form method="post">
+    {{form}}
+    {% csrf_token %}
+    <button type="submit">submit</button>
+</form>
 </body>
 </html>
