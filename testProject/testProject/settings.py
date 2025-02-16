@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'modelFormApp',
     'sessionApp',
     'loginApp',
-    'todoApp'
+    'todoApp',
+    'cbvApp'
 ]
 
 MIDDLEWARE = [
